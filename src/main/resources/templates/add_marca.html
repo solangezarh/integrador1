@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <title>Marca</title>
+    
+    
+    <link rel="stylesheet"  th:href="@{/css/admin.css}"/>
+    <!-- Boxicons CDN Link -->
+    <!-- <link rel="stylesheet" th:href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"  />
+   -->
+    <link rel="stylesheet" th:href="@{/css/add_cajas.css}">
+
+
+
+
+ <!-- 
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+          
+          -->
+  </head>
+  <body>
+ <style>
+          .imagen-tabla{
+                 width: 100px; /* tamaño en la talble */
+            height: 100%; /* proporcion al 100%*/
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+          }
+      </style>
+      
+    <div class="sidebar">
+
+
+     
+      <div class="logo-details">
+        <a href="index.jsp" class="active">
+        <i class="bx bxl-c-plus-plus"></i>
+        <span class="logo_name"  >empresa desde dinamic</span>
+      </a>
+      </div>
+   
+
+
+      <ul class="nav-links">
+        <li>
+          <a href="add_categoria.jsp" class="active">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">categorias</span>
+          </a>
+        </li>
+        <li>
+          <a href="add_producto.jsp">
+            <i class="bx bx-box"></i>
+            <span class="links_name">productos</span>
+          </a>
+        </li>
+        <li>
+          <a href="add_pedidos.jsp">
+            <i class="bx bx-list-ul"></i>
+            <span class="links_name">pedidos</span>
+          </a>
+        </li>
+        <li>
+          <a href="add_clientes.jsp">
+            <i class="bx bx-pie-chart-alt-2"></i>
+            <span class="links_name">clientes</span>
+          </a>
+        </li>
+        <li>
+          <a href="add_provedores.jsp">
+            <i class="bx bx-coin-stack"></i>
+            <span class="links_name">provedores</span>
+          </a>
+        </li>
+        <li>
+                <a th:href="@{/marcas}">
+            <i class="bx bx-book-alt"></i>
+            <span class="links_name">Marca</span>
+          </a>
+        </li>
+        <li>
+          <a href="add_user.jsp">
+            <i class="bx bx-user"></i>
+            <span class="links_name">Team</span>
+          </a>
+        </li>
+        <li>
+          <a href="carrito_compras.jsp">
+            <i class="bx bx-message"></i>
+            <span class="links_name">carrito_compras</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-heart"></i>
+            <span class="links_name">reseÃ±as</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Setting</span>
+          </a>
+        </li>
+        <li class="log_out">
+          <a href="#">
+            <i class="bx bx-log-out"></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <nav>
+        <div class="sidebar-button">
+          <i class="bx bx-menu sidebarBtn"></i>
+          <span class="dashboard">Dashboard</span>
+        </div>
+        <div class="search-box">
+          <input type="text" placeholder="buscar desede dinamic..." />
+          <i class="bx bx-search"></i>
+        </div>
+        <div class="profile-details">
+          <img src="images/profile.jpg" alt="" />
+          <span class="admin_name">admin</span>
+          <i class="bx bx-chevron-down"></i>
+        </div>
+      </nav>
+
+      <div class="home-content">
+        <div class="overview-boxes">
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">pedidos</div>
+              <div class="number">2</div>
+              <div class="indicator">
+                <i class="bx bx-up-arrow-alt"></i>
+                <span class="text">Up from yesterday</span>
+              </div>
+            </div>
+            <i class="bx bx-cart-alt cart"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">c</div>
+              <div class="number">3</div>
+              <div class="indicator">
+                <i class="bx bx-up-arrow-alt"></i>
+                <span class="text">Up from yesterday</span>
+              </div>
+            </div>
+            <i class="bx bxs-cart-add cart two"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">clientes</div>
+              <div class="number">2</div>
+              <div class="indicator">
+                <i class="bx bx-up-arrow-alt"></i>
+                <span class="text">date</span>
+              </div>
+            </div>
+            <i class="bx bx-cart cart three"></i>
+          </div>
+          <div class="box">
+            <div class="right-side">
+              <div class="box-topic">ventas</div>
+              <div class="number">3</div>
+              <div class="indicator">
+                <i class="bx bx-down-arrow-alt down"></i>
+                <span class="text">Down From Today</span>
+              </div>
+            </div>
+            <i class="bx bxs-cart-download cart four"></i>
+          </div>
+        </div>
+  </div>
+  
+  <form th:action="@{/marcas/guardar}" th:object="${marca}" method="post">
+            <!-- Mostrar mensajes de errores de validación -->
+    <div th:if="${#fields.hasErrors('nombre')}" class="alert alert-danger">
+        <ul>
+            <li th:each="error : ${#fields.errors('nombre')}">
+                <span th:text="${error}"></span>
+            </li>
+        </ul>
+    </div>
+    
+    <!-- Input para el nombre de la marca -->
+   
+   <input type="text" th:field="*{nombre}" placeholder="Nombre de la Marca"/>
+    
+     <!-- Mostrar mensajes flash de éxito -->
+    <div th:if="${mensaje}" class="alert alert-success">
+        <span th:text="${mensaje}"></span>
+    </div>
+    
+    
+     <button type="submit">Guardar</button>
+    </form>
+
+
+<div class="top-sales box">
+<div class="title"> ver productos agregados</div>
+<div class="product-display">
+
+
+   <table class="product-display-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                   <th>nombre</th>
+                <th>Accionesss</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr th:each="marca : ${listMarcas}">
+                <td th:text="${marca.idMarca}"></td>
+                <td th:text="${marca.nombre}"></td>
+                <td>
+                    <a th:href="@{/marcas/editar/{id}(id=${marca.idMarca})}">Editar</a>
+                    <a th:href="@{/marcas/eliminar/{id}(id=${marca.idMarca})}">Eliminar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+     </div>
+</div>
+
+
+ </section>
+
+</body>
+</html>
